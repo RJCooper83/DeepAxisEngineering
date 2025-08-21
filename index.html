@@ -10,12 +10,15 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-    <!-- Netlify form detector (hidden) -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
-      <div data-netlify-recaptcha="true"></div>
-    </form>
+   <!-- Netlify form detector (hidden) -->
+<form name="contact" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
+  <!-- Include the recaptcha placeholder so Netlify knows to attach it -->
+  <div data-netlify-recaptcha="true"></div>
+</form>
+
+
   </body>
 </html>
