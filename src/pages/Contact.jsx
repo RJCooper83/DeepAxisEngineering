@@ -6,15 +6,38 @@ export default function Contact() {
         <p className="mt-2 text-slate-600">
           Tell me about your machines, parts, and bottlenecks. I’ll suggest a clear, low-risk starting point.
         </p>
-        <form name="contact" method="POST" data-netlify="true" className="mt-8 grid gap-3 text-left">
+
+        {/* IMPORTANT: name, method, netlify attrs, hidden form-name input, honeypot */}
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/success"
+          className="mt-8 grid gap-3 text-left"
+        >
+          {/* Netlify needs this */}
           <input type="hidden" name="form-name" value="contact" />
+          {/* Honeypot field (invisible to users) */}
+          <p className="hidden">
+            <label>
+              Don’t fill this out: <input name="bot-field" />
+            </label>
+          </p>
+
           <input className="rounded-xl border border-slate-300 px-4 py-3" name="name" placeholder="Name" required />
           <input className="rounded-xl border border-slate-300 px-4 py-3" name="email" type="email" placeholder="Email" required />
           <textarea className="rounded-xl border border-slate-300 px-4 py-3 min-h-[120px]" name="message" placeholder="What are you working on? Machines, materials, problems…" required />
-          <button className="rounded-2xl bg-slate-900 text-white px-5 py-3 font-medium hover:bg-slate-800">Request consult</button>
-          <p className="text-xs text-slate-500">Prefer email? <a className="underline" href="mailto:rcooper@gmail.com">rcooper@gmail</a></p>
+
+          <button type="submit" className="rounded-2xl bg-slate-900 text-white px-5 py-3 font-medium hover:bg-slate-800">
+            Request consult
+          </button>
+
+          <p className="text-xs text-slate-500">
+            Prefer email? <a className="underline" href="mailto:RCooper@Gmail.com">RCooper@Gmail.com</a>
+          </p>
         </form>
       </div>
     </section>
-  )
+  );
 }
