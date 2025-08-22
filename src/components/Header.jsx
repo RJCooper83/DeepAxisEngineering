@@ -67,7 +67,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 backdrop-blur bg-brand-dark/80 border-b border-slate-800">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <NavLink to="/" className="flex items-center gap-3">
-          <img src="/public/img/mini-logo.png" alt="Deep Axis" className="h-8 w-auto" />
+          <img src="/img/mini-logo.png" alt="Deep Axis" className="h-8 w-auto" />
           <span className="font-semibold tracking-tight text-brand-gray">Deep Axis Engineering</span>
         </NavLink>
 
