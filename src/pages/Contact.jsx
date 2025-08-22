@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <section id="contact" className="py-16 lg:py-24">
-      <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8 text-center">
+      <div className="rounded-2xl border border-slate-800 bg-black/30 p-6 text-brand-gray">
         <h2 className="text-3xl font-bold tracking-tight">Let’s get your parts running right</h2>
         <p className="mt-2 text-slate-600">
           Tell me about your machines, parts, and bottlenecks. I’ll suggest a clear, low‑risk starting point.
@@ -37,7 +37,7 @@ export default function Contact() {
           </button>
 
           <p className="text-xs text-slate-500">
-            Prefer email? <a className="underline" href="mailto:hello@deepaxis.engineering">hello@deepaxis.engineering</a>
+            Prefer email? <a className="underline" href="mailto:rcooper@gmail.com">Help@DeepAxisEngineering.com</a>
           </p>
         </form>
       </div>

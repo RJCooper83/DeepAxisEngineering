@@ -32,16 +32,16 @@ export default function Services() {
     },
   ]
   return (
-    <section className="py-16 lg:py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="py-16 lg:py-24 bg-grey">
+      <div className="rounded-2xl border border-slate-800 bg-black/30 p-6 text-brand-black">
         <h2 className="text-3xl font-bold tracking-tight">Services</h2>
-        <p className="mt-2 text-slate-600">Start with what moves the needle. Fixed-bid or hourly, on-site or remote.</p>
+        <p className="mt-2 text-white">Start with what moves the needle. Fixed-bid or hourly, on-site or remote.</p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <div key={i} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:shadow-lg transition">
+            <div key={i} className="rounded-2xl border border-slate-200 bg-slate-800 p-6 hover:shadow-lg transition">
               <h3 className="text-xl font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{s.body}</p>
-              <ul className="mt-4 space-y-1 text-sm list-disc pl-5 text-slate-700">
+              <p className="mt-2 text-sm text-white">{s.body}</p>
+              <ul className="mt-4 space-y-1 text-sm list-disc pl-5 text-white">
                 {s.bullets.map((b, j) => <li key={j}>{b}</li>)}
               </ul>
             </div>
