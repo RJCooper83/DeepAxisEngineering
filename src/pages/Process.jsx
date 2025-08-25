@@ -1,11 +1,10 @@
 export default function Process() {
   const steps = [
-    { n: 1, t: "Discovery", d: "Quick call + part samples, goals, machines, constraints." },
-    { n: 2, t: "Plan", d: "Quote with scope, deliverables, timeline, and acceptance tests." },
-    { n: 3, t: "Execute", d: "Programming, posts, setup, prove-out. Clear updates and docs." },
-    { n: 4, t: "Handoff", d: "Runbook + training + follow-up to lock in gains." },
+    { n: 1, t: "Discovery", d: "Quick call + part samples, goals, machines, constraints.", img: "/img/process/discovery.jpg" },
+    { n: 2, t: "Plan", d: "Quote with scope, deliverables, and timeline.", img: "/img/process/plan.jpg" },
+    { n: 3, t: "Execute", d: "Programming, post, setup, prove-out, and 1st piece approval.", img: "/img/process/execute.jpg" },
+    { n: 4, t: "Handoff", d: "Runbook + training", img: "/img/process/handoff.jpg" },
   ];
-
   return (
     <section className="py-16 lg:py-24">
       <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 text-slate-200">
@@ -22,6 +21,11 @@ export default function Process() {
                 <h3 className="text-lg font-semibold text-white">{p.t}</h3>
               </div>
               <p className="text-sm text-slate-300">{p.d}</p>
+                <img
+                  src={p.img}
+                  alt={p.t}
+                  className="rounded-lg w-full max-h-40 object-contain mt-4"
+                />
             </div>
           ))}
         </div>
@@ -37,6 +41,11 @@ export default function Process() {
           <p className="text-sm text-slate-300">
             Ongoing support, optimization, and new strategies to keep you ahead.
           </p>
+             <img
+            src="/img/process/contimprov.jpg"
+            alt="Continuous Improvement"
+            className="rounded-lg object-cover w-full h-40 mt-4"
+          />
         </div>
       </div>
     </section>
