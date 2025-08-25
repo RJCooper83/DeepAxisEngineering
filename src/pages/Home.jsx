@@ -8,12 +8,12 @@ export default function Home() {
         <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-100 via-white to-slate-100" />
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-              CNC Consulting, Programming, &
-              <span className="block text-slate-900">Turnkey Setups that Ship Parts</span>
+           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-[1.15] text-red-600">
+            CNC Consulting, Programming, &
+            <span className="block text-red-600">Turnkey Setups that Ship Parts</span>
             </h1>
             <p className="mt-5 text-lg text-slate-600">
-              Deep Axis Engineering helps job shops and manufacturers hit cycle-time, finish, and tolerance targets—without burning operator hours. On-site or remote.
+              Deep Axis Engineering helps job shops and manufacturers hit cycle-time, finish, and tolerance targets without burning operator hours. I can come On-site or work remote.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/contact" className="rounded-2xl bg-slate-800 text-white px-5 py-3 font-medium hover:bg-slate-800">Book a free 30-min consult</Link>

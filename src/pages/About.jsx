@@ -1,10 +1,8 @@
 export default function About() {
   return (
+    
     <section className="py-16 lg:py-24 bg-gray">
-      <div className="rounded-2xl border border-slate-800 bg-black/30 p-6 text-brand-gray">
-        <h1 className="text-3xl font-bold tracking-tight">About Deep Axis Engineering</h1>
-
-        
+            
                 {/* Image */}
         <div className="flex justify-center">
           <img
@@ -13,6 +11,9 @@ export default function About() {
             className="rounded-2xl shadow-lg max-w-xs w-full object-cover"
           />
         </div>
+
+      <div className="rounded-2xl border border-slate-800 bg-black/30 p-6 text-red-600">
+        <h1 className="text-3xl font-bold tracking-tight">About Deep Axis Engineering</h1>
 
     <div className="mt-4 text-gray-700 dark:text-gray-200 space-y-4">
   <p>
@@ -55,7 +56,7 @@ export default function About() {
     practical solutions that save time and money.
   </p>
 
-  <h2 className="text-xl font-semibold mt-6">
+  <h2 className="text-xl font-semibold text-red-600 mt-6">
     Why I Started Deep Axis Engineering
   </h2>
 
@@ -75,8 +76,7 @@ export default function About() {
     comes with a full-time hire, but in a way that’s flexible,
     cost-effective, and tailored to their exact needs. For me, this isn’t
     just about writing code for a machine—it’s about solving problems,
-    creating efficient workflows, and helping shops succeed long-term. I also
-    love to share my knowledge with other people so you not onl
+    creating efficient workflows, and helping shops succeed long-term.
   </p>
 
   <p>
