@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom"; // <-- add this
 
+/** ----------------- Selected Results (yours) ----------------- */
 const cases = [
   {
     img: "/img/cases/medical-part.jpg",
@@ -12,37 +14,33 @@ const cases = [
     d: "Stability map + variable flute end mills eliminated harmonics; finish within spec.",
   },
   {
-    img: "/img/cases/osp-post.png",
-    h: "OSP post overhaul",
+    img: "/img/cases/post.png",
+    h: "Post overhaul",
     d: "Safe retracts, proper M-code map, subspindle sync. Operators stopped hand-editing.",
   },
-
-    {
-    img: "/img/cases/process.jpg", 
+  {
+    img: "/img/cases/process.jpg",
     h: "Process Review",
-    d: "This part was 5ops Lathe/Mill redone to 1op on a Mill/Turn"
+    d: "This part was 5ops Lathe/Mill redone to 1op on a Mill/Turn",
   },
-
   {
-    img: "/img/cases/swiss.jpg", 
+    img: "/img/cases/swiss.jpg",
     h: "Swiss Machining",
-    d: "Long parts, Tiny Parts, Segment Threading, and Difficult Materials"
+    d: "Long parts, Tiny Parts, Segment Threading, and Difficult Materials",
   },
-
   {
-    img: "/img/cases/defense.jpg", 
+    img: "/img/cases/defense.jpg",
     h: "Probing and Checking in the machine",
-    d: "Operators can easily see if they need to rerun something before pulling the part"
+    d: "Operators can easily see if they need to rerun something before pulling the part",
   },
 ];
 
 export default function Work() {
   const [open, setOpen] = useState(false);
-  const [index, setIndex] = useState(0); // which case is active in the lightbox
+  const [index, setIndex] = useState(0);
 
   const active = cases[index];
 
-  // Close on ESC, navigate with arrows when lightbox is open
   useEffect(() => {
     if (!open) return;
     function onKey(e) {
@@ -51,7 +49,6 @@ export default function Work() {
       if (e.key === "ArrowLeft") setIndex((i) => (i - 1 + cases.length) % cases.length);
     }
     window.addEventListener("keydown", onKey);
-    // Prevent background scroll when open
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
@@ -62,25 +59,25 @@ export default function Work() {
 
   return (
     <section className="py-16 lg:py-24">
+      {/* -------- Selected Results -------- */}
       <div className="rounded-2xl border border-slate-800 bg-black/30 p-6 text-slate-200">
         <h2 className="text-3xl font-bold tracking-tight">Selected Results</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {cases.map((c, i) => (
             <div
-              key={i}
-              className="rounded-2xl border border-slate-200 bg-slate-800 p-6 flex flex-col justify-between"
+              key={`case-${i}`}
+              className="rounded-2xl border border-slate-200/20 bg-slate-800 p-6 flex flex-col justify-between"
             >
               <div>
                 <div className="text-sm font-semibold text-white">{c.h}</div>
                 <div className="text-sm text-slate-300 mt-2">{c.d}</div>
               </div>
-
-              {/* Thumbnail: click to open lightbox */}
               <img
                 src={c.img}
                 alt={c.h}
                 className="h-24 w-auto mx-auto mt-4 object-contain rounded-md cursor-zoom-in"
                 loading="lazy"
+                decoding="async"
                 onClick={() => {
                   setIndex(i);
                   setOpen(true);
@@ -91,58 +88,60 @@ export default function Work() {
         </div>
       </div>
 
-      {/* Lightbox modal */}
-      {open && (
+      {/* -------- Link to Gallery -------- */}
+      <div className="mt-12 text-center">
+        <h3 className="text-2xl font-bold text-white mb-4">
+          Gallery of Machined Parts
+        </h3>
+        <p className="text-slate-300 mb-6">
+          Explore more examples of our machining work, from Swiss to 5-Axis and
+          everything in between.
+        </p>
+        <Link
+          to="/gallery"
+          className="inline-block px-6 py-3 rounded-xl bg-white text-slate-900 font-semibold shadow hover:bg-slate-200 transition"
+        >
+          View Full Gallery
+        </Link>
+      </div>
+
+      {/* -------- Lightbox -------- */}
+      {open && active && (
         <div
           className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label={active?.h || "Image preview"}
           onClick={() => setOpen(false)}
         >
-          {/* Stop clicks inside the panel from closing */}
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
-            {/* Image */}
+          <div
+            className="relative"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
               src={active.img}
               alt={active.h}
               className="max-h-[85vh] max-w-screen-lg w-auto h-auto rounded-xl shadow-2xl"
             />
-
-            {/* Caption */}
             <div className="mt-3 text-center text-slate-200">
               <div className="font-semibold">{active.h}</div>
               <div className="text-sm text-slate-300">{active.d}</div>
             </div>
-
-            {/* Close button (top-right) */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute -top-3 -right-3 rounded-full bg-white/90 text-slate-900 px-3 py-1 text-sm font-medium shadow hover:bg-white"
-              aria-label="Close"
+              className="absolute -top-3 -right-3 rounded-full bg-white/90 text-slate-900 px-3 py-1 text-sm font-medium shadow"
             >
               ✕
             </button>
-
-            {/* Prev / Next controls */}
-            {cases.length > 1 && (
-              <>
-                <button
-                  onClick={() => setIndex((i) => (i - 1 + cases.length) % cases.length)}
-                  className="absolute left-[-3rem] top-1/2 -translate-y-1/2 hidden md:block rounded-full bg-white/90 text-slate-900 px-3 py-2 text-sm font-semibold shadow hover:bg-white"
-                  aria-label="Previous image"
-                >
-                  ‹
-                </button>
-                <button
-                  onClick={() => setIndex((i) => (i + 1) % cases.length)}
-                  className="absolute right-[-3rem] top-1/2 -translate-y-1/2 hidden md:block rounded-full bg-white/90 text-slate-900 px-3 py-2 text-sm font-semibold shadow hover:bg-white"
-                  aria-label="Next image"
-                >
-                  ›
-                </button>
-              </>
-            )}
+            <button
+              onClick={() => setIndex((i) => (i - 1 + cases.length) % cases.length)}
+              className="absolute left-[-3rem] top-1/2 -translate-y-1/2 hidden md:block bg-white/90 text-slate-900 px-3 py-2 rounded-full"
+            >
+              ‹
+            </button>
+            <button
+              onClick={() => setIndex((i) => (i + 1) % cases.length)}
+              className="absolute right-[-3rem] top-1/2 -translate-y-1/2 hidden md:block bg-white/90 text-slate-900 px-3 py-2 rounded-full"
+            >
+              ›
+            </button>
           </div>
         </div>
       )}

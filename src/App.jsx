@@ -10,6 +10,7 @@ import Work from './pages/Work.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
 import Success from './pages/Success.jsx'
+import Gallery from "./pages/Gallery";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/success" element={<Success />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
       </main>
 
