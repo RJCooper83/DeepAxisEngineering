@@ -29,7 +29,7 @@ const cases = [
     d: "Long parts, Tiny Parts, Segment Threading, and Difficult Materials",
   },
   {
-    img: "/img/cases/defense.jpg",
+    img: "/img/cases/Probe.jpg",
     h: "Probing and Checking in the machine",
     d: "Operators can easily see if they need to rerun something before pulling the part",
   },
