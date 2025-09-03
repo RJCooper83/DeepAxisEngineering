@@ -13,7 +13,7 @@ export default function Home() {
               <span className="block text-red-600">Turnkey Setups that Ship Parts</span>
             </h1>
             <p className="mt-5 text-lg text-slate-600">
-              Deep Axis Engineering helps job shops and manufacturers hit cycle‑time, finish, and tolerance targets without burning operator hours. I can come on‑site or work remote.
+              Deep Axis Engineering helps job shops and manufacturers hit cycle‑time, finish, and tolerance targets without burning operator hours. We don't just fix problems we prevent them in the first place. I can come on‑site or work remote.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/contact" className="rounded-2xl bg-slate-800 text-white px-5 py-3 font-medium hover:bg-slate-800">

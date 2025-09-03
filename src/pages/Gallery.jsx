@@ -10,7 +10,7 @@ const gallery = [
   { img: "/img/gallery/Flange.png", h: "Custom Automotive Part", d: "Intake part made from 6061", tags: ["Lathe","Aluminum"] },
   { img: "/img/gallery/Diffuser.jpg", h: "Firearm Part", d: "Diffuser 17-4", tags: ["Mill/Turn","Stainless"] },
   { img: "/img/gallery/Paint.jpg", h: "Automotive Paint Component", d: "Plastic with very tight GDT", tags: ["Mill/Turn","Plastic"] },
-  { img: "/img/gallery/Extractor.jpg", h: "Tank Turrent Part", d: "Made from Hardened Forging Defnse part with very tight GDT", tags: ["Mill/Turn"] },
+  { img: "/img/gallery/Extractor.jpg", h: "Tank Turrent Part", d: "Made from Hardened Forging Defense part with very tight GDT", tags: ["Mill/Turn"] },
   { img: "/img/gallery/Segthrd.jpg", h: "Segment Thread Macro", d: "These were a test for my macro 8-32 10-32 3/8-24", tags: ["Swiss"] },
   { img: "/img/gallery/Plate.png", h: "Plate for Automotive Manufacturing", d: "Milled Aluminum Plate", tags: ["Mill","Aluminum"] },
   { img: "/img/gallery/Manual.jpg", h: "Manual Machining", d: "Hard Turn a relief for easy press fit", tags: ["Lathe"] },
